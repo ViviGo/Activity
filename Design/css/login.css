@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: url('../img/background.svg') no-repeat;
+    background-size: cover;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #5e5e5e;
+}
+a:link{
+    color: #5e5e5e;
+}
+a:active{
+    color: #5e5e5e;
+}
+.login{
+    width: 400px;
+    height: 420px;
+    background: #ffffff;
+    margin: 110px auto 0;
+    box-shadow: 0 0 20px #DFE1DE;
+    border-radius: 5%;
+}
+.login form{
+    margin: 0 auto;
+}
+.silk{
+    position: relative;
+    margin-bottom: 40px;
+}
+.silk img{
+    margin-top: 30px;
+    margin-left: -17px;
+}
+.silk .title{
+    font-size: 24px;
+    color: #5e5e5e;
+    position: absolute;
+    margin-top: -49px;
+    margin-left: 45%;
+}
+.message{
+    width: 100%;
+    height: 100%;
+}
+form input{
+    text-indent: 12px;
+    width: 240px;
+    height: 36px;
+    line-height: 36px;
+    color: #5e5e5e;
+    font-size: 16px;
+    margin-left: 80px;
+    margin-bottom: 6px;
+    margin-right: 80px;
+    border-radius: 5px;
+    float: left;
+    display: block;
+    outline: none;
+}
+form input[type=text],input[type=password]{
+    border: 2px solid #ffde51;
+    background: transparent;
+}
+#login{
+    width: 244px;
+    height: 40px;
+    background: #ffde51;
+    border: none;
+    /* Overriding the default underline styling of the links */
+    position:relative;
+    cursor:pointer;
+    background-repeat:no-repeat;
+    /* The following two rules are fallbacks, in case
+       the browser does not support multiple backgrounds. */
+    background-position:bottom left;
+    /* Multiple backgrounds version. The background images
+       are defined individually in color classes */
+    background-position:bottom left, top right, 0 0, 0 0;
+    background-clip:border-box;
+    /* A 1px highlight inside of the button */
+    -moz-box-shadow:0 0 1px #fff inset;
+    -webkit-box-shadow:0 0 1px #fff inset;
+    box-shadow:0 0 1px #fff inset;
+
+    /* Animating the background positions with CSS3 */
+    /* Currently works only in Safari/Chrome */
+
+    -webkit-transition:background-position 1s;
+    -moz-transition:background-position 1s;
+    transition:background-position 1s;
+    background-image:url('../img/button_bg.png'), url('../img/button_bg.png'),
+    -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(255,222,81,1)), to(rgba(255,222,81,0)));
+}
+#login:hover {
+    /* The first rule is a fallback, in case the browser
+	   does not support multiple backgrounds
+	*/
+    background-position: top left;
+    background-position: top left, bottom right, 0 0, 0 0;
+}
+
+form input[type=checkbox]{
+    width: 15px;
+    height: 15px;
+    margin-top: 0;
+    margin-right: 0px;
+}
+form #tipOne,#tipTwo{
+    width: 400px;
+    height: 24px;
+    line-height: 16px;
+    font-size: 16px;
+    color: #fc8080;
+    margin-left: 88px;
+    background: url(../img/error.png) no-repeat;
+    float: left;
+    text-indent: 20px;
+    visibility: hidden;
+}
+.bottom{
+    font-size: 14px;
+    color: #5e5e5e;
+    line-height: 16px;
+    margin-top: 12px;
+    float: left;
+    display: inline;
+}
+.bottom p{
+    display: block;
+    float: left;
+    width: 90px;
+    margin-left: 5px;
+}
+.bottom .turnToReg{
+    float: right;
+    width: 64px;
+    margin-right: 68px;
+}
+
+

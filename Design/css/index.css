@@ -1,0 +1,388 @@
+*{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #5e5e5e;
+    font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+body,html{
+    height:860px;
+    position: relative;
+    min-width: 1341px;
+    max-width: 1900px;
+}
+a{
+    color: inherit;
+    outline: 0;
+    text-decoration: none;
+}
+ul,li{
+    list-style-type: none;
+}
+#body{
+    position: relative;
+    margin: 0 auto;
+    background: #f2f2f2;
+    min-height: 100%;
+    height: auto;
+}
+header{
+    width: 100%;
+    height: 44px;
+    background: #ffde51;
+}
+header nav{
+    height: 44px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+nav .logo{
+    position: absolute;
+    left: 0;
+    width: 130px;
+}
+nav .logo a img{
+    width: 192px;
+    height: 46px;
+}
+nav .menu{
+    height: 44px;
+    margin: 0 auto;
+    position: absolute;
+    left: 200px;
+}
+.menu_box{
+    height: 44px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+}
+.menu_box li{
+    float: left;
+    cursor: pointer;
+    height: 44px;
+    line-height: 44px;
+    text-align: left;
+}
+.menu_box li:hover a{
+    color: #ffa52e;
+}
+.menu_box li a{
+    display: inline-block;
+    padding: 0 24px;
+    color: #fff6b9;
+}
+.menu_box li a img{
+    margin-bottom: -2px;
+}
+.menu_box .current a{
+    font-weight: 600;
+    color:#ffa52e;
+}
+input:-webkit-autofill
+{
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.search
+{
+    float: right;
+    position: relative;
+    width: 18%;
+    height: 44px;
+}
+form{
+    position: absolute;
+    z-index: 999;
+}
+form #word
+{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 6px 0 7.5px;
+    text-indent: 1em;
+    color: #5e5e5e;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+form .search_button
+{
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: url(../img/search.png) no-repeat;
+    background-size: contain;
+}
+form #tip{
+    box-shadow: 0px 5px 5px #dfe1de;
+}
+form #tip li
+{
+    overflow: hidden;
+
+    width: 200px;
+    height: 35px;
+
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    background: #ffffff;
+}
+form #tip li a{
+    font-size: 14px;
+    line-height: 35px;
+}
+
+form #tip li:hover a
+{
+    display: block;
+    background: #ffde51;
+}
+.user_center{
+    color: #5e5e5e;
+    float: right;
+    width: 15%;
+    height: 44px;
+}
+.user_center .login_hide{
+    float: right;
+}
+.user_center .login_hide li{
+    float: left;
+    cursor: pointer;
+    position: relative;
+    height: 44px;
+    padding: 0px 24px;
+    display: inline-block;
+}
+.user_pic .user_list img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.log_off a img{
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+.user_center .login_hide li:hover{
+    background: rgba(255, 255, 153, 0.44);
+}
+.user_center .LogAndReg{
+    float: right;
+    margin-right: 20px;
+}
+.user_center .LogAndReg li{
+    float: left;
+    line-height: 44px;
+    cursor: pointer;
+}
+.user_center .LogAndReg li a{
+    margin-left: 15px;
+    padding: 0;
+}
+.user_center .LogAndReg li a i{
+    display: inline-block;
+    width: 1.5px;
+    height: 12px;
+    background: #5e5e5e;
+    margin-left: 15px;
+    font-style: normal;
+}
+
+#back_to_top
+{
+    position: fixed;
+    z-index: 298;
+    right: 45px;
+    bottom: 100px;
+    width: 50px;
+    height: 65px;
+}
+#back_to_top a.returnTop
+{
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+}
+#back_to_top a.circle{
+    position: absolute;
+    top: -15px;
+    right: 50px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+#back_to_top .returnTop
+{
+    background: url(../img/return.png) no-repeat;
+    background-size: contain;
+}
+#back_to_top .circle{
+    background: url(../img/paopao.png) no-repeat;
+    background-size: contain;
+}
+
+.contain{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 20px;
+}
+#rollbox {
+    width: 100%;     /*这里600x300是图片的宽高*/
+    height: 400px;
+    overflow: hidden;   /*隐藏溢出的图片，因为图片左浮动，总宽度为4200*/
+    position: relative;
+    float: left;
+    clear: both;
+}
+#list {
+    width: 8288px;   /*这里设置14张图片总宽度*/
+    height: 400px;
+    position: absolute;  /*基于父容器rollbox进行定位*/
+    z-index: 1;
+}
+#list img {
+    width: 1184px;
+    height: 400px;
+    float: left;
+    margin-left: -10px;
+}
+#buttons {
+    position: absolute;
+    height: 10px;
+    width: 8%;
+    z-index: 2;
+    bottom: 5%;
+    left: 46%;
+}
+#buttons span {
+    cursor: pointer;
+    float: left;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 15px;
+    background: #a4a4a4;
+    margin-right: 5px;
+}
+#buttons .on {
+    margin-top: -10px;
+    height: 25px;
+    background: #ffde51;   /*选中的按钮样式*/
+}
+.wrapper{
+    height: 440px;
+}
+.recommend{
+    background: #FFFFFF;
+    margin-bottom: 40px;
+}
+.recommend .title{
+    overflow: hidden;
+    width: 95%;
+    padding: 20px 27px 20px;
+}
+.title h1{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    float: left;
+}
+.title a{
+    font-size: 14px;
+    float: right;
+}
+.line{
+    height: 2px;
+    margin-top: -2px;
+    background: #f4f4f4;
+}
+.other{
+    width: 95%;
+    height: 270px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+#recFirst .other .ac_list img{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 3px #f2f2f2;
+}
+.other .ac_list.last{
+    margin-right: 0;
+}
+.ac_list{
+    width: 21%;
+    height: 290px;
+    margin-right: 5.33%;
+    float: left;
+    transition: all 1.2s;
+}
+.ac_list h2{
+    text-align: center;
+    font-weight: normal;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+.ac_list:hover{
+    transform: scale(1.2);
+}
+#detail .detail img{
+    width: 70%;
+    height: 180px;
+    margin: 0px 10.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #ffffff;
+}
+#detail #spe1 img{
+    margin: 0px 8%;
+}
+#detail #spe2 img{
+    margin: 0px 14%;
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -100px;
+    height: 100px;
+    background: #ffde51;
+    font-size: 14px;
+}
+.footer .mes{
+    width: 100%;
+    height: 70px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 15px;
+}
+.footer .mes a{
+    margin-right: 38px;
+}
+
+
+
+

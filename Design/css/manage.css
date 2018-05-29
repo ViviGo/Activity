@@ -1,0 +1,549 @@
+*{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #5e5e5e;
+    font-family:'Hiragino Sans GB','Microsoft Yahei',"WenQuanYi Micro Hei",SimSun,Tahoma,Arial,Helvetica,STHeiti;
+}
+html,body{
+    height: 100%;
+}
+.user_center.manage_user{
+    width: 8%;
+}
+.content{
+    width: 100%;
+}
+.top{
+    width: 100%;
+    height: 250px;
+    background: #fff6b9;
+    position: relative;
+}
+.bottom{
+    width: 100%;
+    height: 550px;
+    background: #f2f2f2;
+}
+.manage{
+    position: absolute;
+    top: 11.69%;
+    left: 10%;
+    z-index: 10;
+    width: 80%;
+    height: 620px;
+    box-shadow: 2px 2px 7px rgba(164, 164, 164, 0.5), -1px -1px 7px rgba(164, 164, 164, 0.5);
+    background: #ffffff;
+}
+.manage_left{
+    width: 20%;
+    float: left;
+    background: #ffffff;
+    margin-left: -1px;
+    border-right: 0.5px solid #acb5b5;
+}
+.manage_left img{
+    width: 60%;
+    height: 130px;
+    margin: 5% 20%;
+    border-radius: 50%;
+    border: 2px solid #f2f2f2;
+}
+.manage_left .user_manage_name{
+    line-height: 20px;
+    margin: 0 auto;
+    width: 133px;
+    margin-bottom: 9%;
+}
+.manage_left ul{
+    height: 425px;
+    width: 100%;
+    background: #acb5b5;
+    margin-top: -4px;
+}
+.list{
+    text-align: center;
+    line-height: 54px;
+}
+.manage_left ul li:hover{
+    background: #707070;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.manage_left ul li.current_tab{
+    background: #707070;
+    color: #FFFFFF;
+}
+.manage_right{
+    width: 80%;
+    height: 100%;
+    background:url(../img/paint1.png) no-repeat;
+    float: left;
+    margin-right: -1px;
+    background-position: 102%;
+
+}
+.manage_right>div{
+    margin-left: 7%;
+    width: 80%;
+    height: 100%;
+}
+#day{
+    float: left;
+    width: 100%;
+}
+#day input[type="text"]{
+    width: 130px;
+    margin-bottom: 5px;
+}
+#day #hour{
+    width: 40px;
+    margin-left: 5px;
+}
+#day #showDay1,#showDay2{
+    vertical-align: middle;
+    position: inherit;
+}
+.time_select{
+    float: right;
+    height: 87px;
+    margin-right: 6.5%;
+    margin-top: -3px;
+}
+.use ul li{
+    margin-top: 20px;
+    line-height: 24px;
+}
+.use ul li p,input,textarea{
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+.use ul li input{
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border:1px solid #CCCCCC ;
+    border-radius: 5px;
+    text-indent: 12px;
+}
+.use ul li textarea{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    vertical-align: text-top;
+}
+.use #apply_mes,#clear_mes{
+    float: right;
+    width: 150px;
+    height: 30px;
+    padding-right: 10px;
+    background: #ffde51;
+    text-align: center;
+    margin-left: 10%;
+}
+#files {
+    display: inline-block;
+    background: url(../img/joinPic.png) no-repeat;
+    background-position: center;
+    margin-left: 20px;
+    border-radius: 5px;
+    vertical-align: middle;
+    border: 0.5px solid rgb(204, 204, 204);
+}
+#files input{
+    cursor: pointer;
+    width: 80px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 85px;
+}
+#preview1,#preview2,#preview3,#preview4{
+    width: 102px;
+    height: 87px;
+    position: absolute;
+    top: 54.4%;
+    border-radius: 5px;
+}
+.unloadPhoto{
+    width: 102px;
+    height: 87px;
+
+}
+#preview2,#preview3,#preview4 .unloadPhoto{
+    margin-top: -10px;
+}
+#form1,#form2,#form3{
+    margin-top: 10px;
+}
+#fileName{
+    display: inline-block;
+    text-indent: 0;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 4px;
+    margin-left: 20px;
+    position: relative;
+}
+#fileName:hover{
+    border-bottom: 1px solid #CCCCCC;
+}
+#fileName input{
+    left: -40px;
+    top: 0;
+    opacity: 0;
+}
+#input_spe{
+    width: 100px;
+    position: absolute;
+}
+
+
+/*日历1弹窗代码*/
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    overflow:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+#box1{
+    width: 350px;
+    position: absolute;
+    left: 61%;
+    background: #FFFFFF;
+    top: 31%;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 0 0 20px #cccccc;
+    padding: 0 10px;
+    z-index: 1000;
+}
+#title1{
+    width: 106.8%;
+    height: 40px;
+    background: #ffde52;
+    margin: 0 auto;
+    margin-left: -3.7%;
+}
+#month1{
+    float:left;
+    width:60px;
+    height:40px;
+    text-align:center;
+    cursor:pointer;
+    line-height:40px;
+}
+#year1{
+    float:left;
+    width:80px;
+    height:40px;
+    text-align:center;
+    cursor:pointer;
+    line-height:40px;
+}
+#week1{
+    width:350px;
+    height:50px;
+}
+#week1 div{
+    float:left;
+    width:48px;
+    height:48px;
+    margin:1px;
+    background:#C90;
+    color:#fff;
+    text-align:center;
+    line-height:48px;
+    cursor:pointer;
+}
+#con1{
+    width:350px;
+}
+#con1 div{
+    float:left;
+    width:48px;
+    height:48px;
+    margin:1px;
+    background:#CCC;
+    color:#333;
+    text-align:center;
+    line-height:48px;
+    cursor:pointer;
+}
+#con1 .edate{
+    background:#999;
+}
+#con1 .edate:hover{
+    background:#09F;
+    color:#fff;
+    border-radius: 30%;
+}
+#con1 div.now{
+    background:#09F;
+    color:#fff;
+    border-radius: 30%;
+}
+
+#prevmonth1,#nextmonth1,#prevyear1,#nextyear1{
+    float:left;
+    width:50px;
+    height:40px;
+    text-align:center;
+    cursor:pointer;
+    line-height:40px;
+}
+
+#btns1{
+    width:350px;
+    height:40px;
+}
+#nowtime1{
+    float:left;
+    margin:5px;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    background:#09F;
+    cursor:pointer;
+    border-radius:5px;
+}
+#nowtime1:hover,#cleartime1:hover{
+    background:#ddd;
+}
+#cleartime1{
+    float:left;
+    margin:5px;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    background:#09F;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/*日历2弹窗代码*/
+#box2{
+    width: 350px;
+    position: absolute;
+    left: 61%;
+    background: rgb(255, 255, 255);
+    top: 31%;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 0 0 20px #cccccc;
+    padding: 0 10px;
+    z-index: 1000;
+}
+#title2{
+    width:350px;
+    height:50px;
+}
+#month2{
+    float:left;
+    width:60px;
+    height:50px;
+    text-align:center;
+    cursor:pointer;
+    line-height:50px;
+}
+#year2{
+    float:left;
+    width:80px;
+    height:50px;
+    text-align:center;
+    cursor:pointer;
+    line-height:50px;
+}
+#week2{
+    width:350px;
+    height:50px;
+}
+#week2 div{
+    float:left;
+    width:48px;
+    height:48px;
+    margin:1px;
+    background:#C90;
+    color:#fff;
+    text-align:center;
+    line-height:48px;
+    cursor:pointer;
+}
+#con2{
+    width:350px;
+}
+#con2 div{
+    float:left;
+    width:48px;
+    height:48px;
+    margin:1px;
+    background:#CCC;
+    color:#333;
+    text-align:center;
+    line-height:48px;
+    cursor:pointer;
+}
+#con2 .edate{
+    background:#999;
+}
+#con2 .edate:hover{
+    background:#09F;
+    color:#fff;
+    border-radius: 30%;
+}
+#con2 div.now{
+    background:#09F;
+    color:#fff;
+    border-radius: 30%;
+}
+
+#prevmonth2,#nextmonth2,#prevyear2,#nextyear2{
+    float:left;
+    width:50px;
+    height:50px;
+    text-align:center;
+    cursor:pointer;
+    line-height:50px;
+}
+
+#btns2{
+    width:350px;
+    height:40px;
+}
+#nowtime2{
+    float:left;
+    margin:5px;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    background:#09F;
+    cursor:pointer;
+    border-radius:5px;
+}
+#nowtime2:hover,#cleartime2:hover{
+    background:#ddd;
+}
+#cleartime2{
+    float:left;
+    margin:5px;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    background:#09F;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/*第三个tab查看活动*/
+.look{
+    margin-top: 30px;
+    margin-left: 5%;
+    position: absolute;
+}
+#none p{
+    font-size: 26px;
+    margin-top: 25%;
+}
+.blank{
+    height: 20px;
+    width: 10px;
+    margin-left: 9px;
+    margin-top: -5px;
+    border-left: 2px solid #ffa52e;
+}
+.webList{
+    border-left: 2px solid #ffa52e;
+    position: relative;
+    margin-left: 9px;
+    margin-top: -5px;
+    width: 86%;
+    height: 75px;
+    padding-bottom: 20px;
+    vertical-align: middle;
+    background: url(../img/no.png) no-repeat;
+    background-size: auto;
+}
+.mlist{
+    margin-left: 5%;
+    line-height: 60px;
+    width: 100%;
+}
+.webList:hover{
+    background: url(../img/yes.png) no-repeat;
+    background-position-x: 30px;
+}
+.webList:hover .mlist{
+    margin-left: 9%;
+}
+.mlist_left a{
+    float: left;
+    line-height: 60px;
+    margin-left: 10px;
+}
+.mlist_left_state{
+    font-size: 15px;
+    color: #CCCCCC;
+}
+.mlist_right{
+    float: right;
+    height: 60px;
+    margin-right: 13%;
+}
+.mlist_right a{
+    background: #ffde51;
+    padding: 5px 15px;
+}
+.mlist_right a:hover{
+    cursor: pointer;
+    background: #fff6b9;
+}
+.return{
+    width: 91.3%;
+    height: 560px;
+    position: relative;
+    line-height: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.before{
+    color: #ffa52e;
+    position: absolute;
+    z-index: 10;
+    display: inline-block;
+    cursor: pointer;
+}
+.middle{
+    width: 90%;
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+}
+.tran{
+    position: absolute;
+    margin-left: 4.5px;
+}
+#form3{
+    margin-top: 4%;
+}
+.comment_list{
+    width: 112%;
+    margin-top: 6%;
+}
+.mlist_right.commentid a{
+    background: #FFFFFF;
+}
+.middle.second{
+    width: 90%;
+}
+.noneComment p{
+    margin-top: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+
+

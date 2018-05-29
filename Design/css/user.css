@@ -1,0 +1,138 @@
+.user{
+    position: absolute;
+    top: 11.69%;
+    left: 10%;
+    z-index: 10;
+    width: 80%;
+    height: 620px;
+    box-shadow: 2px 2px 7px rgba(164, 164, 164, 0.5), -1px -1px 7px rgba(164, 164, 164, 0.5);
+    background: #ffffff;
+}
+.user_left{
+    width: 20%;
+    float: left;
+    background: #ffffff;
+    margin-left: -1px;
+    border-right: 0.5px solid #acb5b5;
+}
+.user_left img{
+    width: 60%;
+    height: 130px;
+    margin: 5% 20%;
+    border-radius: 50%;
+    border: 2px solid #f2f2f2;
+}
+.user_left .user_manage_name{
+    line-height: 20px;
+    margin: 0 auto;
+    width: 117px;
+    margin-bottom: 9%;
+}
+.user_left ul{
+    height: 425px;
+    width: 100%;
+    background: #acb5b5;
+    margin-top: -4px;
+}
+.list{
+    text-align: center;
+    line-height: 54px;
+}
+.user_left ul li:hover{
+    background: #707070;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.user_left ul li.current_tab{
+    background: #707070;
+    color: #FFFFFF;
+}
+.user_right{
+    width: 80%;
+    height: 100%;
+    background:url(../img/paint1.png) no-repeat;
+    float: left;
+    margin-right: -1px;
+    background-position: 102%;
+}
+.user_right>div{
+    margin-left: 7%;
+    width: 80%;
+    height: 100%;
+}
+.use ul li{
+    margin-top: 20px;
+    line-height: 24px;
+}
+.use ul li p,input,textarea{
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+.use ul li input{
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border:1px solid #CCCCCC ;
+    border-radius: 5px;
+    text-indent: 12px;
+}
+.use ul li input[type="radio"]{
+    width: 20px;
+    height: auto;
+}
+.use ul li textarea{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    vertical-align: text-top;
+}
+.use #apply_mes,#clear_mes{
+    float: right;
+    width: 150px;
+    height: 30px;
+    padding-right: 10px;
+    background: #ffde51;
+    text-align: center;
+    margin-left: 10%;
+}
+.user_comment_input{
+    position: relative;
+    margin-top: 10%;
+    height: 155px;
+}
+#commentInfor{
+    position: absolute;
+    vertical-align: top;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+#comment_apply{
+    float: right;
+    width: 150px;
+    height: 30px;
+    background: #ffde51;
+    text-align: center;
+    margin-right: 15.9%;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+#comment_apply:hover{
+    background: #ffec54;
+}
+.usermlist_right{
+    float: right;
+    height: 60px;
+    margin-right: 13%;
+}
+.usermlist_right a{
+    background: #ffde51;
+    padding: 5px 15px;
+}
+.usermlist_right a:hover{
+    cursor: pointer;
+    background: #fff6b9;
+}
