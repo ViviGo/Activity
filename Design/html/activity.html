@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>activity</title>
+    <link href="../css/activity.css" rel="stylesheet">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/apply.js"></script>
+    <script src="../js/join.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/returnTop.js"></script>
+</head>
+<body>
+    <div style="display: none">
+        <a class="user_ses"></a>
+        <a class="userid_ses"></a>
+    </div>
+    <div id="body">
+        <canvas id="canvas"></canvas>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../img/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul class="menu_box">
+                        <li class="index">
+                            <a href="index.html" class="index_list">
+                                <img src="../img/index.png" width="22" height="22" alt="">
+                                首页
+                            </a>
+                        </li>
+                        <li class="activity current">
+                            <a href="activity.html" class="activity_list">
+                                <img src="../img/activity.png" width="19" height="21" alt="">
+                                活动
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user_center">
+                    <ul class="login_hide">
+                        <li class="user_pic">
+                            <a href="manage.html" class="user_list">
+                                <img src="../img/user-boy.png" alt="" title="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <form name="formSearch" id="formid">
+                        <input type="text" id="word" class="search_value" autocomplete="off" placeholder="请输入查找内容">
+                        <input class="search_button" type="button" onclick="go()" value="" />
+                        <div id="tip" style="display: none">
+                            <ul>
+                                <li><a href="javascript:void(0)">软件设计大赛</a></li>
+                                <li><a href="javascript:void(0)">互联网“+”年华</a></li>
+                                <li><a href="javascript:void(0)">银行业务技能大赛</a></li>
+                                <li><a href="javascript:void(0)">电子杂志大赛</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="event">
+            <div class="choose">
+                <div class="hold first">
+                    <a href="" class="toggle"></a>
+                    <a href="" id="selector">不限状态</a>
+                    <ul class="option">
+                        <li >不限状态</li>
+                        <li >进行中</li>
+                        <li >已结束</li>
+                    </ul>
+                </div>
+                <div class="hold">
+                    <a href="" class="toggle"></a>
+                    <a href="" id="selector">不限时间</a>
+                    <ul class="option">
+                        <li onclick="ins(this)">不限时间</li>
+                        <li >最近一周</li>
+                        <li >最近一月</li>
+                    </ul>
+                </div>
+                <div class="hold">
+                    <a href="" class="toggle"></a>
+                    <a href="" id="selector">不限排序</a>
+                    <ul class="option">
+                        <li >不限排序</li>
+                        <li >开始时间先后</li>
+                        <li >浏览人数最多</li>
+                    </ul>
+                </div>
+                <!--<div class="apply">-->
+                    <!--<a id="apply">发布活动</a>-->
+                <!--</div>-->
+            </div>
+            <div class="ac_show">
+                <ul id="listClass">
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">6</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="showList" style="display: block">
+                        <div class="list01">
+                            <a href="javascript:void(0);">
+                                <img src="../img/roll/1.jpg" id="picture">
+                            </a>
+                            <ul class="message">
+                                <li id="title1" class="test222" name="MesName">
+                                    软件设计大赛
+                                </li>
+                                <li id="title2" name="MesLeader">
+                                    发起人：Java部落
+                                </li>
+                                <li id="title2" name="MesObject">
+                                    活动对象：全校学生
+                                </li>
+                                <li id="title2" name="MesInformation">
+                                    活动简介：软件设计大赛
+                                </li>
+                            </ul>
+                            <div class="SignUp" id="joinActivity">
+                                马上报名
+                            </div>
+                            <div class="operation">
+                                <a href="" class="icon">
+                                    <img src="../img/join_number.png" id="join_number" name="MesPictures">
+                                    <p>参加人数</p>
+                                    <p id="number" name="MesJoinNumber">5</p>
+                                </a>
+                                <a href="" class="icon">
+                                    <img src="../img/datatime.png" id="datatime">
+                                    <p>剩余天数</p>
+                                    <p id="deadline" name="MesRemainDays">7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="pageTuring">
+                <div class="barcon" id="page">
+                    <ul id="newPage">
+                        <li id="firstPage" onclick="firstPage()"><a>首页</a></li>
+                        <li id="prePage" onclick="pre()"><a>上一页</a></li>
+                        <li><a id="showPage"></a></li>
+                        <li id="nextPage" onclick="next()"><a>下一页</a></li>
+                        <li id="lastPage" onclick="lastPage()"><a>尾页</a></li>
+                        <li>
+                            <input id="jumpWhere"></input>
+                        </li>
+                        <li><a id="jumpPage">跳转</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mes">
+                <a href="index.html">关于我们</a>
+                <a href="index.html">加入EG大家庭</a>
+                <a href="index.html">用户协议</a>
+                <a href="index.html">企业服务</a>
+                <a href="index.html">帮助中心</a>
+                <a href="index.html">联系我们</a>
+                <a href="index.html">中文</a>
+                <a href="index.html">English</a>
+                <br>
+                <h1>Easy Going</h1>
+            </div>
+        </footer>
+        <div id="back_to_top" style="display: block">
+            <a class="circle"></a>
+            <a title="返回顶部" class="returnTop"></a>
+        </div>
+        <div class="apply_form" style="display: none;">
+            <div class="apply_head">
+                <a title="关闭" href="javascript:void(0);" class="apply_close">x</a>
+            </div>
+            <div class="inside_right">
+                <ul>
+                    <li><p>发起人:<a id="name">xxx</a></p></li>
+                    <li><p>活动对象:<a id="object">xxx</a></p></li>
+                    <li><p>活动简介:<a id="synopsis">xxx</a></p></li>
+                    <li><p>活动详情:<a id="details">xxx</a></p></li>
+                    <li><p>附件下载:<a id="download">xxx</a></p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bigPic" style="display: none;">
+            <div class="pic_head">
+                <a title="关闭" href="javascript:void(0);" class="pic_close">x</a>
+            </div>
+            <div class="bigger">
+                <img src="../img/123.jpg" id="aiu"></img>
+                <div class="inside_right">
+                    <ul>
+                        <li><a id="event_name">软件设计大赛</a></li>
+                        <li><p>发起人:<a id="name">xxx</a></p></li>
+                        <li><p>所属院系:<a id="object">xxx</a></p></li>
+                        <li><p>活动对象:<a id="synopsis">xxx</a></p></li>
+                        <li><p>开始日期:<a id="dateBegin">xxx</a></p></li>
+                        <li><p>截至日期:<a id="detaEnd">xxx</a></p></li>
+                        <li class="pic_bottom"><p>活动简介:<a id="summary">xxx</a></p></li>
+                        <li class="pic_bottom bottom"><p>附件下载:<a id="load" href="" download>xxx</a></p></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="form_mask" style="display: none;"></div>
+        <script src="../js/canvas.js"></script>
+    </div>
+</body>
+<script src="../js/bigPic.js"></script>
+</html>

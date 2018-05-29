@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage</title>
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/manage.css" rel="stylesheet">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/tab.js"></script>
+    <script src="../js/manage.js"></script>
+</head>
+<body>
+    <div id="body">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../img/logo.svg" width="130px" height="30px" alt="">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul class="menu_box">
+                        <li class="index">
+                            <a href="index.html" class="index_list">
+                                <img src="../img/index.png" width="22" height="22" alt="">
+                                首页
+                            </a>
+                        </li>
+                        <li class="activity">
+                            <a href="activity.html" class="activity_list">
+                                <img src="../img/activity.png" width="19" height="21" alt="">
+                                活动
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user_center manage_user">
+                    <ul class="login_hide">
+                        <li class="user_pic">
+                            <a href="manage.html" class="user_list">
+                                <img src="../img/manager.png" alt="" title="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <form name="formSearch" onSubmit="return go(this)" id="formid">
+                        <input name="q" type="text" id="word" class="search_value" autocomplete="off" placeholder="请输入查找内容">
+                        <input class="search_button" type="submit" value="" />
+                        <div id="tip" style="display: none">
+                            <ul>
+                                <li><a href="javascript:void(0)">软件设计大赛</a></li>
+                                <li><a href="javascript:void(0)">互联网“+”年华</a></li>
+                                <li><a href="javascript:void(0)">银行业务技能大赛</a></li>
+                                <li><a href="javascript:void(0)">电子杂志大赛</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="top">
+            </div>
+            <div class="bottom">
+            </div>
+            <div class="manage">
+                <div class="manage_left">
+                    <img src="../img/manager.png" id="userPic">
+                    <p class="user_manage_name" id="userId">管理员161548211</p>
+                    <ul>
+                        <li class="list current_tab">个人资料</li>
+                        <li class="list">发布活动</li>
+                        <li class="list">查看活动</li>
+                    </ul>
+                </div>
+                <div class="manage_right">
+                    <div class="data use" id="tab1" style="display:block">
+                        <form action="" method="post" id="form1" name="form1" onsubmit="return myCheck1()">
+                            <ul>
+                            <li>
+                                帐号
+                                <input type="text" readonly unselectable="on" id="personalId" value=""></input>
+                            </li>
+                            <li>
+                                昵称
+                                <input type="text" id="personalName" value="">
+                            </li>
+                            <li>
+                                院系
+                                <input type="text" id="personalDepartment" value="">
+                            </li>
+                            <li>
+                                组织
+                                <input type="text" id="personalOrganize" value="">
+                            </li>
+                            <li>
+                                手机
+                                <input type="text" readonly unselectable="on" id="personalPhone" value=""></input>
+                            </li>
+                            <li>
+                                头像
+                                <a id="files">
+                                    <div id="preview1" style="display: none"></div>
+                                    <input type="file" id="personalPortrait">
+                                </a>
+                            </li>
+                            <li>
+                                简介
+                                <textarea rows="4" cols="50" maxlength="100" onchange="this.value=this.value.substring(0, 100)"
+                                          onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)" id="personalImformation" value=""></textarea>
+                            </li>
+                            <li class="text_right">
+                                <input type="submit" value="确定" id="apply_mes">
+                                <input type="reset" value="重置" id="clear_mes">
+                            </li>
+                        </ul>
+                        </form>
+                    </div>
+                    <div class="apply use" id="tab2" style="display:none">
+                        <form action="" method="post" id="form2" name="form2" onsubmit="return myCheck2()">
+                            <ul>
+                                <li>
+                                    活动名称
+                                    <input type="text" id="activityName" value="">
+                                </li>
+                                <li>
+                                    所属院系
+                                    <input type="text" id="activityDepartment" value="">
+                                </li>
+                                <li>
+                                    所属组织
+                                    <input type="text" id="activityOrganize" value="">
+                                </li>
+                                <li id="day">
+                                    活动时间
+                                    <div class="time_select">
+                                        开始
+                                        <input type="text" id="activityBeginDate">
+                                        <img src="../img/day.png" id="showDay1">
+                                        <div id="box1" style="display: none;" onload="loadClander1()">
+                                            <div id="title1">
+                                                <div id="prevyear1"><<</div>
+                                                <div id="prevmonth1"><</div>
+                                                <div id="month1"></div>
+                                                <div id="year1"></div>
+                                                <div id="nextmonth1">></div>
+                                                <div id="nextyear1">>></div>
+                                            </div>
+                                            <div id="week1">
+                                                <div>SUN</div>
+                                                <div>MON</div>
+                                                <div>TUE</div>
+                                                <div>WEB</div>
+                                                <div>THU</div>
+                                                <div>FRI</div>
+                                                <div>SAT</div>
+                                            </div>
+                                            <div id="con1" class="clearfix"></div>
+                                            <div id="btns1">
+                                                <div id="nowtime1">当前时间</div>
+                                            </div>
+                                        </div>
+                                        <input type="text" id="hour">
+                                        <b>:</b>
+                                        <input type="text" id="hour">
+                                        <br>
+                                        结束
+                                        <input type="text" id="activityEndDate">
+                                        <img src="../img/day.png" id="showDay2">
+                                        <div id="box2" style="display: none;" onload="loadClander2()">
+                                            <div id="title2">
+                                                <div id="prevyear2"><<</div>
+                                                <div id="prevmonth2"><</div>
+                                                <div id="month2"></div>
+                                                <div id="year2"></div>
+                                                <div id="nextmonth2">></div>
+                                                <div id="nextyear2">>></div>
+                                            </div>
+                                            <div id="week2">
+                                                <div>SUN</div>
+                                                <div>MON</div>
+                                                <div>TUE</div>
+                                                <div>WEB</div>
+                                                <div>THU</div>
+                                                <div>FRI</div>
+                                                <div>SAT</div>
+                                            </div>
+                                            <div id="con2" class="clearfix"></div>
+                                            <div id="btns2">
+                                                <div id="nowtime2">当前时间</div>
+                                            </div>
+                                        </div>
+                                        <input type="text" id="hour">
+                                        <b>:</b>
+                                        <input type="text" id="hour">
+                                    </div>
+                                </li>
+                                <br>
+                                <li>
+                                    活动对象
+                                    <input type="text" id="activityObject" value="">
+                                </li>
+                                <li>
+                                    插入图片
+                                    <a id="files">
+                                        <div src="" id="preview2" style="display: none"></div>
+                                        <input type="file" id="activityImageUrl">
+                                    </a>
+                                    <a id="files">
+                                        <div src="" id="preview3" style="display: none"></div>
+                                        <input type="file" id="activityImageUrl2">
+                                    </a>
+                                    <a id="files">
+                                        <div src="" id="preview4" style="display: none"></div>
+                                        <input type="file" id="activityImageUrl3">
+                                    </a>
+                                </li>
+                                <li>
+                                    活动简介
+                                    <textarea rows="4" cols="50" maxlength="100" onchange="this.value=this.value.substring(0, 100)"
+                                              onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)" id="activityInformation" value=""></textarea>
+                                </li>
+                                <li>
+                                    添加附件
+                                    <a id="fileName">
+                                        上传附件
+                                        <input type="file" id="input_spe">
+                                    </a>
+                                </li>
+                                <li class="text_right">
+                                    <input type="submit" value="确认" id="apply_mes">
+                                    <input type="reset" value="重置" id="clear_mes">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div class="look" id="tab3" style="display:none">
+                        <div id="some" style="display: block">
+                            <img src="../img/clock.png">
+                            <ul>
+                                <li class="blank"></li>
+                                <li class="webList" >
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="mlist_state">(进行中)</a>
+                                        </div>
+                                        <div class="mlist_right">
+                                            <a onclick="checkTo(this)" name="det_com">查看详情</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="webList" >
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="mlist_state">(进行中)</a>
+                                        </div>
+                                        <div class="mlist_right">
+                                            <a onclick="checkTo(this)" name="det_com">查看详情</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="webList" >
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="mlist_state">(已结束)</a>
+                                        </div>
+                                        <div class="mlist_right">
+                                            <a onclick="checkTo(this)" name="det_com">查看反馈</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <img src="../img/tran.jpg" class="tran">
+                        </div>
+                        <div id="look_detail" style="display:none ">
+                            <div class="return detail">
+                                <a class="before" onclick="returnDetCom(1)"> < 返回</a>
+                                <a class="middle" name="showActiveDetail">软件设计大赛详情</a>
+                                <form action="" method="post" id="form3" name="form3" class="use" onsubmit="return myCheck3()">
+                                    <ul>
+                                        <li>
+                                            活动名称
+                                            <input type="text" id="activityName" value="" name="">
+                                        </li>
+                                        <li>
+                                            所属院系
+                                            <input type="text" id="activityDepartment" value="">
+                                        </li>
+                                        <li>
+                                            所属组织
+                                            <input type="text" id="activityOrganize" value="">
+                                        </li>
+                                        <li id="day">
+                                            活动时间
+                                            <div class="time_select">
+                                                开始
+                                                <input type="text" id="activityBeginDate">
+                                                <img src="../img/day.png" id="showDay1">
+                                                <div id="box1" style="display: none;" onload="loadClander1()">
+                                                    <div id="title1">
+                                                        <div id="prevyear1"><<</div>
+                                                        <div id="prevmonth1"><</div>
+                                                        <div id="month1"></div>
+                                                        <div id="year1"></div>
+                                                        <div id="nextmonth1">></div>
+                                                        <div id="nextyear1">>></div>
+                                                    </div>
+                                                    <div id="week1">
+                                                        <div>SUN</div>
+                                                        <div>MON</div>
+                                                        <div>TUE</div>
+                                                        <div>WEB</div>
+                                                        <div>THU</div>
+                                                        <div>FRI</div>
+                                                        <div>SAT</div>
+                                                    </div>
+                                                    <div id="con1" class="clearfix"></div>
+                                                    <div id="btns1">
+                                                        <div id="nowtime1">当前时间</div>
+                                                    </div>
+                                                </div>
+                                                <input type="text" id="hour">
+                                                <b>:</b>
+                                                <input type="text" id="hour">
+                                                <br>
+                                                结束
+                                                <input type="text" id="activityEndDate">
+                                                <img src="../img/day.png" id="showDay2">
+                                                <div id="box2" style="display: none;" onload="loadClander2()">
+                                                    <div id="title2">
+                                                        <div id="prevyear2"><<</div>
+                                                        <div id="prevmonth2"><</div>
+                                                        <div id="month2"></div>
+                                                        <div id="year2"></div>
+                                                        <div id="nextmonth2">></div>
+                                                        <div id="nextyear2">>></div>
+                                                    </div>
+                                                    <div id="week2">
+                                                        <div>SUN</div>
+                                                        <div>MON</div>
+                                                        <div>TUE</div>
+                                                        <div>WEB</div>
+                                                        <div>THU</div>
+                                                        <div>FRI</div>
+                                                        <div>SAT</div>
+                                                    </div>
+                                                    <div id="con2" class="clearfix"></div>
+                                                    <div id="btns2">
+                                                        <div id="nowtime2">当前时间</div>
+                                                    </div>
+                                                </div>
+                                                <input type="text" id="hour">
+                                                <b>:</b>
+                                                <input type="text" id="hour">
+                                            </div>
+                                        </li>
+                                        <br>
+                                        <li>
+                                            活动对象
+                                            <input type="text" id="activityObject" value="">
+                                        </li>
+                                        <li>
+                                            插入图片
+                                            <a id="files">
+                                                <div src="" id="preview2" style="display: none"></div>
+                                                <input type="file" id="activityImageUrl">
+                                            </a>
+                                            <a id="files">
+                                                <div src="" id="preview3" style="display: none"></div>
+                                                <input type="file" id="activityImageUrl2">
+                                            </a>
+                                            <a id="files">
+                                                <div src="" id="preview4" style="display: none"></div>
+                                                <input type="file" id="activityImageUrl3">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            活动简介
+                                            <textarea rows="4" cols="50" maxlength="100" onchange="this.value=this.value.substring(0, 100)"
+                                                      onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)" id="activityInformation" value=""></textarea>
+                                        </li>
+                                        <li>
+                                            添加附件
+                                            <a id="fileName">
+                                                上传附件
+                                                <input type="file" id="input_spe">
+                                            </a>
+                                        </li>
+                                        <li class="text_right">
+                                            <input type="submit" value="确认" id="apply_mes">
+                                            <input type="reset" value="重置" id="clear_mes">
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="look_comment" style="display: none">
+                            <div class="return comment">
+                                <a class="before" onclick="returnDetCom(2)"> < 返回</a>
+                                <a class="middle second" name="showActiveDetail">软件设计大赛用户反馈</a>
+                                <div class="comment_list" style="display: block">
+                                    <img src="../img/comment_list.png">
+                                    <ul>
+                                        <li class="blank"></li>
+                                        <li class="webList" id="first" >
+                                            <a name="activeNum" style="display: none"></a>
+                                            <div class="mlist">
+                                                <div class="mlist_left">
+                                                    <a class="mlist_left_title" name="mlist_comment">建议1</a>
+                                                </div>
+                                                <div class="mlist_right commentid">
+                                                    <a name="commentID">用户161548202</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <img src="../img/tran.jpg" class="tran">
+                                </div>
+                                <div class="noneComment" style="display: none">
+                                    <p>该活动还没有任何用户反馈活动</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="none" style="display: none">
+                            <p>您还没有发布过活动，快去发布活动吧！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mes">
+                <a href="index.html">关于我们</a>
+                <a href="index.html">加入EG大家庭</a>
+                <a href="index.html">用户协议</a>
+                <a href="index.html">企业服务</a>
+                <a href="index.html">帮助中心</a>
+                <a href="index.html">联系我们</a>
+                <a href="index.html">中文</a>
+                <a href="index.html">English</a>
+                <br>
+                <h1>Easy Going</h1>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../js/clander.js"></script>
+</html>

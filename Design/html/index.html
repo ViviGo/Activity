@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="../css/index.css" rel="stylesheet">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/rollbox.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/returnTop.js"></script>
+</head>
+<body>
+    <div style="display: none">
+        <a class="user_ses"></a>
+        <a class="userid_ses"></a>
+    </div>
+    <div id="body">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../img/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul class="menu_box">
+                        <li class="index current">
+                            <a href="javascript:void(0);" class="index_list">
+                                <img src="../img/index.png" width="22" height="22" alt="">
+                                首页
+                            </a>
+                        </li>
+                        <li class="activity">
+                            <a href="activity.html" class="activity_list">
+                                <img src="../img/activity.png" width="19" height="21" alt="">
+                                活动
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user_center">
+                    <ul class="login_hide" style="display: none">
+                        <li class="user_pic">
+                            <a href="manage.html" class="user_list">
+                                <img src="../img/user-boy.png" alt="" title="">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="LogAndReg">
+                        <li>
+                            <a href="login.html">
+                                登录
+                                <i></i>
+                            </a>
+                            <a href="register.html">
+                                注册
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <form name="formSearch" id="formid">
+                        <input name="q" type="text" id="word" class="search_value" autocomplete="off" placeholder="请输入查找内容">
+                        <input class="search_button" type="button" onclick="go()" value="" />
+                        <div id="tip" style="display: none">
+                            <ul>
+                                <li><a href="javascript:void(0)">软件设计大赛</a></li>
+                                <li><a href="javascript:void(0)">互联网“+”年华</a></li>
+                                <li><a href="javascript:void(0)">银行业务技能大赛</a></li>
+                                <li><a href="javascript:void(0)">电子杂志大赛</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="contain">
+            <div class="wrapper">
+                <div id="rollbox">
+                    <div id="list" style="left: -1184px;">
+                        <div>
+                            <img src="../img/roll/金牌司仪.jpg" alt="1"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/金牌司仪.jpg" alt="1"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/冬季大长跑.jpg" alt="2"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/食神.jpg" alt="3"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/读书节.jpg" alt="4"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/写作比赛.jpg" alt="5"/>
+                        </div>
+                        <div>
+                            <img src="../img/roll/金牌司仪.jpg" alt="5"/>
+                        </div>
+                    </div>
+                    <div id="buttons">
+                        <span index="1" class="on"></span>
+                        <span index="2"></span>
+                        <span index="3"></span>
+                        <span index="4"></span>
+                        <span index="5"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend" id="recFirst">
+                <div class="title">
+                    <h1>活动推荐</h1>
+                    <a href="activity.html">查看更多>></a>
+                </div>
+                <div class="line"></div>
+                <div class="other">
+                    <div class="ac_list">
+                        <img src="../img/roll/1.jpg" alt="">
+                        <h2>软件设计大赛</h2>
+                    </div>
+                    <div class="ac_list">
+                        <img src="../img/roll/2.jpg" alt="">
+                        <h2>软件设计大赛</h2>
+                    </div>
+                    <div class="ac_list">
+                        <img src="../img/roll/3.jpg" alt="">
+                        <h2>软件设计大赛</h2>
+                    </div>
+                    <div class="ac_list last">
+                        <img src="../img/roll/4.jpg" alt="">
+                        <h2>软件设计大赛</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend" id="detail">
+                <div class="title">
+                    <h1>功能说明</h1>
+                </div>
+                <div class="line"></div>
+                <div class="other">
+                    <div class="ac_list">
+                        <div class="detail" id="spe1">
+                            <img src="../img/come.png" alt="">
+                        </div>
+                        <h2>活动发布</h2>
+                    </div>
+                    <div class="ac_list" id="spe2">
+                        <div class="detail">
+                            <img src="../img/get.png" alt="">
+                        </div>
+                        <h2>详情了解</h2>
+                    </div>
+                    <div class="ac_list">
+                        <div class="detail">
+                            <img src="../img/enter_click.png" alt="">
+                        </div>
+                        <h2>参加活动</h2>
+                    </div>
+                    <div class="ac_list last">
+                        <div class="detail">
+                            <img src="../img/comment.png" alt="">
+                        </div>
+                        <h2>活动评价</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="back_to_top" style="display: block">
+            <a class="circle"></a>
+            <a title="返回顶部" class="returnTop"></a>
+        </div>
+        <footer class="footer">
+            <div class="mes">
+                <a href="index.html">关于我们</a>
+                <a href="index.html">加入EG大家庭</a>
+                <a href="index.html">用户协议</a>
+                <a href="index.html">企业服务</a>
+                <a href="index.html">帮助中心</a>
+                <a href="index.html">联系我们</a>
+                <a href="index.html">中文</a>
+                <a href="index.html">English</a>
+                <br>
+                <h1>Easy Going</h1>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

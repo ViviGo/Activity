@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/register.css" rel="stylesheet">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/register.js"></script>
+</head>
+<body>
+    <div class="register">
+        <form id="regForm">
+            <div class="silk">
+                <img src="../img/silk.png" class="top" alt="silk">
+                <p class="title">注册</p>
+            </div>
+            <div class="message">
+                <input type="text" placeholder="学号" id="studentId" onblur="checkStudentId()">
+                <div id="tipOne"></div>
+                <input type="password" placeholder="密码" id="password" onblur="checkPas()">
+                <a class="transPasOrText" onclick="transType()"></a>
+                <div id="tipTwo"></div>
+                <input type="text" placeholder="手机号码" id="phone" onblur="checkPhone()">
+                <div id="tipThree"></div>
+                <input type="text" placeholder="验证码" class="inputVer" id="verify" size="20" onblur="checkVerify()">
+                <input type="button" value="获取验证码" class="verification" id="verification" onclick="timeVer(this)">
+                <div id="tipFour"></div>
+                <input type="button" value="注册" id="regbtn">
+                <div class="bottom">
+                    <a href="login.html" class="turnToLog">立即登录</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

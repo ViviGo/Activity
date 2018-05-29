@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="../css/login.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+    <div class="login">
+        <form id="logForm">
+            <div class="silk">
+                <img src="../img/silk.png" class="top" alt="silk">
+                <p class="title">登录</p>
+            </div>
+            <div class="message">
+                <input type="text" placeholder="学号" id="studentId" onblur="CheckStudentID(this.value)">
+                <div id="tipOne"></div>
+                <input type="password" placeholder="密码" id="password" onblur="CheckPassword(this.value)">
+                <div id="tipTwo"></div>
+                <input type="button" value="登录" id="login" onclick="CheckLogin()">
+                <div class="bottom">
+                    <a href="register.html" class="turnToReg">立即注册</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

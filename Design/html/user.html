@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/manage.css" rel="stylesheet">
+    <link href="../css/user.css" rel="stylesheet">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/tab.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/manage.js"></script>
+</head>
+<body>
+    <div id="body">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../img/logo.svg" width="130px" height="30px" alt="">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul class="menu_box">
+                        <li class="index">
+                            <a href="index.html" class="index_list">
+                                <img src="../img/index.png" width="22" height="22" alt="">
+                                首页
+                            </a>
+                        </li>
+                        <li class="activity">
+                            <a href="activity.html" class="activity_list">
+                                <img src="../img/activity.png" width="19" height="21" alt="">
+                                活动
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user_center manage_user">
+                    <ul class="login_hide">
+                        <li class="user_pic">
+                            <a href="manage.html" class="user_list">
+                                <img src="../img/user-boy.png" alt="" title="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <form name="formSearch" onSubmit="return go(this)" id="formid">
+                        <input name="q" type="text" id="word" class="search_value" autocomplete="off" placeholder="请输入查找内容">
+                        <input class="search_button" type="submit" value="" />
+                        <div id="tip" style="display: none">
+                            <ul>
+                                <li><a href="javascript:void(0)">软件设计大赛</a></li>
+                                <li><a href="javascript:void(0)">互联网“+”年华</a></li>
+                                <li><a href="javascript:void(0)">银行业务技能大赛</a></li>
+                                <li><a href="javascript:void(0)">电子杂志大赛</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="top">
+            </div>
+            <div class="bottom">
+            </div>
+            <div class="user">
+                <div class="user_left">
+                    <img src="../img/user-boy.png">
+                    <p class="user_manage_name">用户161548211</p>
+                    <ul>
+                        <li class="list current_tab">个人资料</li>
+                        <li class="list">我的活动</li>
+                    </ul>
+                </div>
+                <div class="user_right">
+                    <div class="data use" id="tab1" style="display:block">
+                        <form action="" method="post" id="form1" name="form1" onsubmit="return myCheck1()">
+                            <ul>
+                                <li>
+                                    学号
+                                    <input type="text" readonly unselectable="on" id="personalId" value=""></input>
+                                </li>
+                                <li>
+                                    姓名
+                                    <input type="text" id="personalName" value="">
+                                </li>
+                                <li>
+                                    性别
+                                    <input type="radio" class="only" name="sex" value="male" checked="checked">男
+                                    <input type="radio" class="only" name="sex" value="female">女
+                                </li>
+                                <li>
+                                    院系
+                                    <input type="text" id="personalDepartment" value="">
+                                </li>
+                                <li>
+                                    专业
+                                    <input type="text" id="personalMajor" value="">
+                                </li>
+                                <li>
+                                    手机
+                                    <input type="text" readonly unselectable="on" id="personalPhone" value=""></input>
+                                </li>
+                                <li>
+                                    头像
+                                    <a id="files">
+                                        <div id="preview1" style="display: none"></div>
+                                        <input type="file" id="personalPortrait">
+                                    </a>
+                                </li>
+                                <li>
+                                    简介
+                                    <textarea rows="4" cols="50" maxlength="100" onchange="this.value=this.value.substring(0, 100)"
+                                              onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)" id="personalImformation" value=""></textarea>
+                                </li>
+                                <li class="text_right">
+                                    <input type="submit" value="确认" id="apply_mes">
+                                    <input type="reset" value="重置" id="clear_mes">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div class="look" id="tab3" style="display:none">
+                        <div id="some" style="display: block">
+                            <img src="../img/clock.png">
+                            <ul>
+                                <li class="blank"></li>
+                                <li class="webList" >
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="user_mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="user_mlist_state">(进行中)</a>
+                                        </div>
+                                        <div class="usermlist_right">
+                                            <a onclick="" name="ret_com">退出报名</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="webList">
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="user_mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="user_mlist_state">(进行中)</a>
+                                        </div>
+                                        <div class="usermlist_right">
+                                            <a onclick="" name="ret_com">退出报名</a>                                        </div>
+                                    </div>
+                                </li>
+                                <li class="webList">
+                                    <a name="activeNum" style="display: none"></a>
+                                    <div class="mlist">
+                                        <div class="mlist_left">
+                                            <a class="mlist_left_title" name="user_mlist_title">软件设计大赛</a>
+                                            <a class="mlist_left_state" name="user_mlist_state">(已结束)</a>
+                                        </div>
+                                        <div class="usermlist_right">
+                                            <a name="ret_com">评价活动</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <img src="../img/tran.jpg" class="tran">
+                        </div>
+                        <div id="user_comment" style="display: none;">
+                            <div class="return comment">
+                                <a class="before"> < 返回</a>
+                                <a class="middle second" name="showActiveDetail">软件设计大赛用户反馈</a>
+                                <div class="user_comment_input">
+                                    评价活动
+                                    <textarea rows="6" cols="70" maxlength="100" onchange="this.value=this.value.substring(0, 100)"
+                                              onkeydown="this.value=this.value.substring(0, 100)"
+                                              onkeyup="this.value=this.value.substring(0, 100)" id="commentInfor" value="">
+                                    </textarea>
+                                </div>
+                                <input type="submit" value="确定" id="comment_apply">
+                            </div>
+                        </div>
+                        <div id="none" style="display: none">
+                            <p>您还没有参加过活动，快去参加活动吧！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mes">
+                <a href="index.html">关于我们</a>
+                <a href="index.html">加入EG大家庭</a>
+                <a href="index.html">用户协议</a>
+                <a href="index.html">企业服务</a>
+                <a href="index.html">帮助中心</a>
+                <a href="index.html">联系我们</a>
+                <a href="index.html">中文</a>
+                <a href="index.html">English</a>
+                <br>
+                <h1>Easy Going</h1>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
